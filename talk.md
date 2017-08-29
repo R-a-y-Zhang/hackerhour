@@ -17,8 +17,8 @@ interface or if one day, your machine suddenly fails to boot and you must
 enter into single-user mode and all you are greeted with an onimous message
 saying that emergency mode has been activated and below it a blinking cursor,
 one day you will be asked to use it. This talk will cover the vanilla terminal
-in POSIX-compliant terminals and will not include any commands that are not
-included in the vanilla versions. We will also go over some packages that you
+in POSIX-compliant machines and will not include any commands that are not
+included in the vanilla versions (I hope). We will also go over some packages that you
 should install to make your life much easier. Now, let us get started.
 ## Basics
 ### Syntax for this guide
@@ -189,5 +189,5 @@ Process ID. PIDs are all positive numbers, almost always greater than 0, (PID 0 
 are usually granted on a sequential basis, i.e. the process that comes first gets a lower PID. PID 1 is granted to the _init_ process, responsible for
 system startup and shutdown, but this is because it is almost always the first process that is run on a system. This PID is important because
 this is what you need to _kill_ or terminate (I mean killing a process...I do not advocate murder). There may be a number of reasons that you
-want to _kill_. Whether it is because it is taking up too space or it has stopped responding and cannot be closed normally. We will get to how to kill
+want to _kill_ a process. Whether the process is taking up too space or it has stopped responding and cannot be closed normally. We will get to how to kill
 a process later. Now, we must figure out how to find the PID of the process we want to kill.
