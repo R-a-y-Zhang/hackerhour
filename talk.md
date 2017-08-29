@@ -175,6 +175,25 @@ Starting from left to right:
 9. The time of last modification.
 10. The name of the file or directory.
 
+### Zip, Bzip2, Gzip, and Tar
+One of the most common formats that you will encounter are compressed and archive files. The most common of these files are zip (.zip),
+bzip2 (.bz or .bz2), gzip (.gz), and tarball (.tar). The last one is a bit different from the other ones but that distinction can be saved for
+you to figure out with Google.
+#### Compressing to zip and making tarballs
+To make a zip file, you simply do "zip [zip file name].zip [files or directories]" and it will compress the files to into a zip. If you have directories, use the
+"-r" option. To unzip, you would execute "unzip [zipfile]" and it will unzip it to the current directory. To unzip to another directory, set a destination
+with "-d", e.g. "unzip [zipfile] -d [dst]"
+
+To create a tarball, you would execute "tar -cvf [tarball name].tar [files or directories]" and to extract one you would do
+"tar -xvf [tarball name] (-C [target-directory])". Sometimes, you will see a ".gz" somewhere in the tarball extension (e.g. tarball.tar.gz), meaning
+that the files were compressed with gzip. Then, you would add a "z" to "-xvf" (so "-xvzf") to extract it. The letters, in the options mean the following:
++ "-c" means compress and "-x" means extract (easy way to remember: you **C**ompress a file and you e**X**tract a tarball)
++ "-v" means verbose mode, which shows you every file that it has unarchived. You do not need this if you do not want the vomit of text to appear on your screen.
++ "-f" means the file to read or write from
++ "-z" the tarball uses gzip for compression. Do not use if ".gz" is not in the extension. If it uses bzip2, use "-j" instead.
+
+There are various tools out there to extract and compile all the different compression and archive formats, but these are the ones I usually use.
+
 ### Space Usage
 df (-h) : Shows the disk space and usage of all currently mounted file systems. Add "-h" to make output human-readable.
 du (-h) [directory] : Shows the disk usage of everyting in _directory_. Add "-h" to make output human-readable. You can also add "| sort -n" to
@@ -196,3 +215,25 @@ system startup and shutdown, but this is because it is almost always the first p
 this is what you need to _kill_ or terminate (I mean killing a process...I do not advocate murder). There may be a number of reasons that you
 want to _kill_ a process. Whether the process is taking up too space or it has stopped responding and cannot be closed normally. We will get to how to kill
 a process later. Now, we must figure out how to find the PID of the process we want to kill.
+
+There are a few ways to find our process and its PID. I shall go over ps, top, and lsof.
+
+ps -
+The ps utility presents a snapshot of the currently running processes on the machine currently running processes on the machine.
+There are a number of arguments that can be passed: a, u, and x. -a displays information about processes by other users including
+those by the current user that also has a controlling terminal. -u displays info about processes by the specified user that has
+a controlling terminal. -x displays information about processes that do not have a controlling terminal. If you are looking for a
+process ran from the terminal, then it is not necessary to include -x. However, if it is something executed outside of a terminal,
+such as another program, then it would be necessary to include -x. The output of ps might be a garbled mess, you might need to
+pipe it to grep to search for a specific process (e.g. "ps -aux | grep Chrome" to search for an unresponsive Chrome process).
+
+top -
+This gives a real-time overview of the processes and the resources which it takes up. This gives information about a process's PID, virtual memory,
+physical memory, cpu usage, and other information. This is useful if you find yourself low on memory and need to kill off a process that
+is using too much (Chrome). You can sort the processes by the various categories at the top by append "-o" and the column name. However, top is meant
+to show you the processes that are utilizing the most amount of resources and therefore lacks the ability to browse. If you want that ability,
+you can install htop (please refer to instructions for your specific platform), which is more versatile than top and arguably more
+readable.
+
+lsof -
+This lists files and the processes that own them as well as any ports and IPs that the file is listening on. 
