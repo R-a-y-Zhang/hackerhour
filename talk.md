@@ -10,15 +10,15 @@ out of you mind. Let's begin!
 As a programmer, there are a few tools which you are required to be
 comfortable with whether or not you want to or not. One of these things is the
 terminal, the tool which our forefathers wielded before we had cute little icons
-and nice colors to look at. A time where speeds were measured in KHz instead of
+and nice colors to look at. A time when speeds were measured in KHz instead of
 GHz. A time when pong was considered fun. Some might find it intimidating,
 some might find it annoying to use (I mean, why would you when there are other
 tools that does everything that the terminal does but with a GUI),
 and some might be familiar or even embrace it. However you feel about it,
 you will need to be comfortable with it because at some point, you will be called
-upon to use it. Whether it is your primary interface or if one day
+upon to use it. Whether it be your primary interface when you work or if one day
 your machine suddenly fails to boot and you are cheerily greeted with the message "Welcome to emergency mode!",
-because your file system is fsck'd or your windowing system has dropped off the Earth, one day you will be asked to use it.
+because your file system is fsck'd and your windowing system has dropped off the Earth.
 This talk will cover the vanilla terminal in POSIX-compliant machines and will not include any commands that are not
 included in the vanilla versions (I hope). Windows will also not be covered because
 we are not barbarians (there are windows equivalents, and if you are running windows
