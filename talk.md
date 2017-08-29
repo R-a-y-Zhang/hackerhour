@@ -20,7 +20,7 @@ upon to use it. Whether it be your primary interface when you work or if one day
 your machine suddenly fails to boot and you are cheerily greeted with the message "Welcome to emergency mode!",
 because your file system is fsck'd and your windowing system has dropped off the Earth.
 This talk will cover the vanilla terminal in POSIX-compliant machines and will not include any commands that are not
-included in the vanilla versions (I hope). Windows will also not be covered because
+included in the vanilla versions (I hope). Windows will not be covered because
 we are not barbarians (there are windows equivalents, and if you are running windows
 you can ssh into an ilab machine, which can be set up in minutes just ask anyone who has taken cs 211 or above,
 or if you have the Anniversary Windows 10 update there should
