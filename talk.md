@@ -103,8 +103,8 @@ are some of the most common commands used to interface with the file system.
         + find t* s* : find files whose first letter is t or s
 
 + echo (string) (>|>>) (file) : print contents in string to standard output or writes it to a file
-    + > : replaces contents in _file_ with _string_
-    + >> : appends _string_ to _file_
+    + ">" : replaces contents in _file_ with _string_
+    + ">>" : appends _string_ to _file_
     + Usage of > or >> MUST include a file to write to
 
 + less [file] : outputs the contents of _file_ to terminal and allows navigation up and down
