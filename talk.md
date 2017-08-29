@@ -36,7 +36,7 @@ file system (i.e. /) and is of the form: /dir1/dir2/dir3/...
 A relative path on the file system is the location of the file relative to your current
 location. So for example, let us say that there is the following directory
 and subdirectories:
-dir
+- dir
     - dir1
         - file1
         - file2
@@ -55,7 +55,7 @@ are some of the most common commands used to interface with the file system.
 
 + pwd : Shows your current working directory's absolute path
 
-+ ls (<options> <path> | <path> <options>) : List files in a directory
++ ls (options) (path) : List files in a directory
     + options
         + -a : List All Files
         + -l : List files in list form (columns) instead of simplified form (rows)
