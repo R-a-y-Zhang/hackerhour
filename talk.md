@@ -14,7 +14,7 @@ and nice colors to look at. A time when speeds were measured in KHz instead of
 GHz. A time when pong was considered fun. Some might find it intimidating,
 some might find it annoying to use (I mean, why would you when there are other
 tools that does everything that the terminal does but with a GUI),
-and some might be familiar or even embrace it. However you feel about it,
+ and some might even embrace it. However you feel about it,
 you will need to be comfortable with it because at some point, you will be called
 upon to use it. Whether it be your primary interface when you work or if one day
 your machine suddenly fails to boot and you are cheerily greeted with the message "Welcome to emergency mode!",
