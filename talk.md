@@ -57,7 +57,7 @@ are some of the most common commands used to interface with the file system.
 
 + ls (options) (path) : List files in a directory
     + options
-        + -a : List All Files
+        + -a : List all files
         + -l : List files in list form (columns) instead of simplified form (rows)
     + path : path of the directory
     + Sample commands:
@@ -73,9 +73,9 @@ are some of the most common commands used to interface with the file system.
 
 + touch [files]+ : creates a file or files
     + Sample commands:
-        touch text.txt : creates a file called text.txt
-        touch dir1/text.txt : creates a file text.txt in dir1
-        touch text.txt text2.txt : creates the files text.txt and text2.txt
+        + touch text.txt : creates a file called text.txt
+        + touch dir1/text.txt : creates a file text.txt in dir1
+        + touch text.txt text2.txt : creates the files text.txt and text2.txt
 
 + rm (-r) (-f) [paths]+ :  remove files and directories
     + -r : removes directories and files. If you are only specifying files in paths, you do
@@ -92,10 +92,10 @@ are some of the most common commands used to interface with the file system.
 
 + find [patterns]+ : finds files whose path matches patterns
     + Sample commands:
-        find text.txt : find files in current directory whose name matches text.txt
-        find t* : find files whose first letter is t
-        find dir1/text.txt : find files in dir1 subdirectory whose name matches text.txt
-        find t* s* : find files whose first letter is t or s
+        + find text.txt : find files in current directory whose name matches text.txt
+        + find t* : find files whose first letter is t
+        + find dir1/text.txt : find files in dir1 subdirectory whose name matches text.txt
+        + find t* s* : find files whose first letter is t or s
 
 + echo (string) (>|>>) (file) : print contents in string to standard output or writes it to a file
     + > : replaces contents in _file_ with _string_
@@ -146,11 +146,11 @@ Starting from left to right:
         or the users in the group that the user belongs to.
     5. _chmod_ : To add or remove permissions for the file, you would use _chmod_.
         1. Sample commands
-            chmod +x file : Allow user, group, and global to execute the file
-            chmod u+x file : Add execute permission for user to file
-            chmod g-x file : Remove execution permission from group for file
-            chmod w-w file : Remove write permissions for global for file
-            chmod ug+r file : Add read permission for user and group for file
+            + chmod +x file : Allow user, group, and global to execute the file
+            + chmod u+x file : Add execute permission for user to file
+            + chmod g-x file : Remove execution permission from group for file
+            + chmod w-w file : Remove write permissions for global for file
+            + chmod ug+r file : Add read permission for user and group for file
         2. You can also use numerical codes to edit the permissions for the file. To change permissions using numeric codes, the numeric code must be
             exactly 3 numbers long (e.g. 123) and the numbers are determined by the binary representations of the permissions, i.e. if a permission
             is allowed, it holds the value of 1 and if it is not, it holds the value of 0. Therefore, if the permission is r-x, the binary would be
