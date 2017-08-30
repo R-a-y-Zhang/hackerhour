@@ -78,9 +78,9 @@ are some of the most common commands used to interface with the file system.
 
 + touch [files]+ : creates a file or files
     + Sample commands:
-        + touch text.txt : creates a file called text.txt
-        + touch dir1/text.txt : creates a file text.txt in dir1
-        + touch text.txt text2.txt : creates the files text.txt and text2.txt
+        + ```touch text.txt``` : creates a file called text.txt
+        + ```touch dir1/text.txt``` : creates a file text.txt in dir1
+        + ```touch text.txt text2.txt``` : creates the files text.txt and text2.txt
 
 + rm (-r) (-f) [paths]+ :  remove files and directories
     + -r : removes directories and files. If you are only specifying files in paths, you do
@@ -97,10 +97,10 @@ are some of the most common commands used to interface with the file system.
 
 + find [patterns]+ : finds files whose path matches patterns
     + Sample commands:
-        + find text.txt : find files in current directory whose name matches text.txt
-        + find t* : find files whose first letter is t
-        + find dir1/text.txt : find files in dir1 subdirectory whose name matches text.txt
-        + find t* s* : find files whose first letter is t or s
+        + ```find text.txt``` : find files in current directory whose name matches text.txt
+        + ```find t*``` : find files whose first letter is t
+        + ```find dir1/text.txt``` : find files in dir1 subdirectory whose name matches text.txt
+        + ```find t* s*``` : find files whose first letter is t or s
 
 + echo (string) (>|>>) (file) : print contents in string to standard output or writes it to a file
     + ">" : replaces contents in _file_ with _string_
@@ -120,7 +120,7 @@ believe it), as all terminals are usually equipped with some type of editor, whe
 
 ### File Permissions, Ownership, Groups, and All Those Goodies
 You think we are done with files? lmao. I did not even scratch the tip of the iceberg, I've only scratched the
-precipitation on the tip of the iceberg. If you type _ls -al_, you are presented with a bunch of strings and numbers
+precipitation on the tip of the iceberg. If you type ```ls -al```, you are presented with a bunch of strings and numbers
 that you might not be able to make sense of. It should look something like this:
 ```
 total 16
@@ -136,35 +136,35 @@ permissions, groups, and making soft links.
 
 Starting from left to right:
 1. The letters on the left
-    1. The first letter denotes whether the item is a directory (d), a symlink (l), or a file (-). If it is a _d_ or _-_, it is also
-        a hard link while if it is a _l_, it is a symlink.
+    1. The first letter denotes whether the item is a directory (d), a symlink (l), or a file (-). If it is a ```d``` or ```-```, it is also
+        a hard link while if it is a ```l```, it is a symlink.
     2. Then, you have 9 characters, each of which can be r, w, x, or -. These 9 characters represent the permissions for the file, divided by
         user permissions (the first 3 letters), group permissions (the second trio), the global permissions (the last 3 letters). The first
         letter of the group of three means whether the file can be read by the persons indicated (user, group, or global), the second denotes
         whether the file can be written to by the persons, and the last represents whether it can be executed. If read (r), write (w), or
         execute (x) permissions are granted, then the letter will appear in that place and if it is not, then - is placed there.
     3. Examples:
-        + -rw-r--r-- : the item is a file (the first -), the use can read and write but not execute the file (the first 3 letters after the first, rw-),
+        + ```-rw-r--r--``` : the item is a file (the first -), the use can read and write but not execute the file (the first 3 letters after the first, rw-),
                         the group can read only (the next 3 characters, r--), and everyone (global) can read only (the last 3 characters, r--).
     4. Now, the user is the one who owns the file, the group is the group that the user belongs to (to see what groups you belong to, you can execute
-        "groups $USER" and to see who you currently are, you can execute "whoami" or "echo $USER"), and global is everyone who is not the user
+        ```groups $USER``` and to see who you currently are, you can execute ```whoami``` or ```echo $USER```), and global is everyone who is not the user
         or the users in the group that the user belongs to.
     5. _chmod_ : To add or remove permissions for the file, you would use _chmod_.
         1. Sample commands
-            + chmod +x file : Allow user, group, and global to execute the file
-            + chmod u+x file : Add execute permission for user to file
-            + chmod g-x file : Remove execution permission from group for file
-            + chmod w-w file : Remove write permissions for global for file
-            + chmod ug+r file : Add read permission for user and group for file
+            + ```chmod +x file``` : Allow user, group, and global to execute the file
+            + ```chmod u+x file``` : Add execute permission for user to file
+            + ```chmod g-x file``` : Remove execution permission from group for file
+            + ```chmod w-w file``` : Remove write permissions for global for file
+            + ```chmod ug+r file``` : Add read permission for user and group for file
         2. You can also use numerical codes to edit the permissions for the file. To change permissions using numeric codes, the numeric code must be
             exactly 3 numbers long (e.g. 123) and the numbers are determined by the binary representations of the permissions, i.e. if a permission
             is allowed, it holds the value of 1 and if it is not, it holds the value of 0. Therefore, if the permission is r-x, the binary would be
             101, or in decimal format, it would be 5. Therefore, if one wants to change a file's permission to rw-rw-rw, then you would execute the
-            command: chmod 666 file.
+            command: ```chmod 666 file```.
         3. _chown_ : To change the owner and/or group of a file or directory, you would use the command _chown_.
-            To change the user, to say user1, one would execute "chown user1 file". To change user and group, to user1 and group1,
-            it would be "chown user1:group1 file". If you wish to recursively change ownership for a directory, you can execute
-            "chown -R user1 dir1" or "chown --recursive user1 dir1".
+            To change the user, to say user1, one would execute ```chown user1 file```. To change user and group, to user1 and group1,
+            it would be ```chown user1:group1 file```. If you wish to recursively change ownership for a directory, you can execute
+            ```chown -R user1 dir1``` or ```chown --recursive user1 dir1```.
 2. This is the number of hard links to the file. If the item is a file, it is set to 1. If it is a directory, it is set to the number of
     subdirectories and files plus the parent directory.
 3. The owner of the file.
@@ -180,12 +180,12 @@ One of the most common formats that you will encounter are compressed and archiv
 bzip2 (.bz or .bz2), gzip (.gz), and tarball (.tar). The last one is a bit different from the other ones but that distinction can be saved for
 you to figure out with Google.
 #### Compressing to zip and making tarballs (as well as extracting them)
-To make a zip file, you simply do "zip [zip file name].zip [files or directories]" and it will compress the files to into a zip. If you have directories, use the
-"-r" option. To unzip, you would execute "unzip [zipfile]" and it will unzip it to the current directory. To unzip to another directory, set a destination
-with "-d", e.g. "unzip [zipfile] -d [dst]"
+To make a zip file, you simply do ```zip [zip file name].zip [files or directories]``` and it will compress the files to into a zip. If you have directories, use the
+"-r" option. To unzip, you would execute ```unzip [zipfile]``` and it will unzip it to the current directory. To unzip to another directory, set a destination
+with "-d", e.g. ```unzip [zipfile] -d [dst]```
 
-To create a tarball, you would execute "tar -cvf [tarball name].tar [files or directories]" and to extract one you would do
-"tar -xvf [tarball name] (-C [target-directory])". Sometimes, you will see a ".gz" somewhere in the tarball extension (e.g. tarball.tar.gz), meaning
+To create a tarball, you would execute ```tar -cvf [tarball name].tar [files or directories]``` and to extract one you would do
+```tar -xvf [tarball name] (-C [target-directory])```. Sometimes, you will see a ".gz" somewhere in the tarball extension (e.g. tarball.tar.gz), meaning
 that the files were compressed with gzip. Then, you would add a "z" to "-xvf" (so "-xvzf") to extract it. The letters, in the options mean the following:
 + "-c" means compress and "-x" means extract (easy way to remember: you **C**ompress a file and you e**X**tract a tarball)
 + "-v" means verbose mode, which shows you every file that it has unarchived. You do not need this if you do not want the vomit of text to appear on your screen.
@@ -202,8 +202,8 @@ du (-h) [directory] : Shows the disk usage of everyting in _directory_. Add "-h"
 ### Piping
 One of the things you can do is use the output in one command and use it the argument in another. This is accomplished through the pipe ("|") character, with
 the output of the command on the left of the pipe character as the input of the command to the right of the pipe character. This also allows the
-introduction to the _grep_ command, which can be used to find a pattern in an output piped to it. For example, you can do "ls | grep text" to find a file
-or directory called text in the output of the ls command. This is the same as "find text".
+introduction to the _grep_ command, which can be used to find a pattern in an output piped to it. For example, you can do ```ls | grep text``` to find a file
+or directory called text in the output of the ls command. This is the same as ```find text```.
 
 ## A Bit Harder Now
 ### Ports, Processes, Oh My!
@@ -226,7 +226,7 @@ those by the current user that also has a controlling terminal. -u displays info
 a controlling terminal. -x displays information about processes that do not have a controlling terminal. If you are looking for a
 process ran from the terminal, then it is not necessary to include -x. However, if it is something executed outside of a terminal,
 such as another program, then it would be necessary to include -x. The output of ps might be a garbled mess, you might need to
-pipe it to grep to search for a specific process (e.g. "ps -aux | grep Chrome" to search for an unresponsive Chrome process).
+pipe it to grep to search for a specific process (e.g. ```ps -aux | grep Chrome``` to search for an unresponsive Chrome process).
 
 top -
 This gives a real-time overview of the processes and the resources which it takes up. This gives information about a process's PID, virtual memory,
@@ -241,9 +241,9 @@ This lists files and the processes that own them as well as any ports and IPs th
 "list open files", literally everything in a Linux machine is a file (even network connections because they are given a number
 called a "file descriptor"). Therefore, lsof can be used to diagnose networking issues. This can be used to see what process
 is connecting on what port, and is especially useful for when you are trying to use a web framework and finds that the port that
-you are trying to connect to is already in use. To do this, executing "lsof -i -P -n | grep [port]" will yield the process currently
+you are trying to connect to is already in use. To do this, executing ```lsof -i -P -n | grep [port]``` will yield the process currently
 operating on that port. However, you can also use this to figure out what process is currently using what file, which might become
-necessary when you try to access a file and find that it is locked, by running "lsof [file path]".
+necessary when you try to access a file and find that it is locked, by running ```lsof [file path]```.
 
 ### The Extras
 Finally, before we proceed onto bash scripting, we cover two useful commands: _awk_ and _xargs_. The former is actually quite
@@ -262,7 +262,7 @@ This also happens to introduce one of the conditionals of _awk_.
 
 #### xargs
 _xargs_ is used to pass deliminated results as individual parameters. For example, let us say that you have the files test1, test2, test3, test4, test5 and
-you wish to delete all of them. Instead of typing out the filenames of those five, it would be more efficient to do ```ls | grep test | xargs rm```. Here,
+you wish to delete all of them. Instead of typing out the filenames of those five, it would be more efficient to do ```find test* | xargs rm```. Here,
 the results of _ls_ is piped to _grep_, which finds only those that start with test, and then passes the output to _xargs_, which uses each of those files
 as an individual argument that is passed to _rm_.
 
