@@ -264,6 +264,7 @@ _xargs_ is used to pass deliminated results as individual parameters. For exampl
 you wish to delete all of them. Instead of typing out the filenames of those five, it would be more efficient to do ```ls | grep test | xargs rm```. Here,
 the results of _ls_ is piped to _grep_, which finds only those that start with test, and then passes the output to _xargs_, which uses each of those files
 as an individual argument that is passed to _rm_.
+
 ### Do Bashery
 The last thing that will be covered is bash scripting. While the commands are a big part of using bash, scripting is where the
 real action is. One argument is that the commands that exist in bash have been optimized many times over and it is oftentimes
@@ -274,3 +275,12 @@ things:
  1. Search and replacing a string in a large number of files
  2. Output the files which contain a certain phrase
  3. Count the number of occurrences of each word in a series of files
+
+#### Assignment 1: Refactoring...
+Please refer to _refactor.sh_
+
+#### Assignment 2: Find in Files...
+Please refer to _finder.sh_
+
+#### Assignment 3: Word Count
+Please refer to _count.sh_
