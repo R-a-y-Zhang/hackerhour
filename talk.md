@@ -245,9 +245,25 @@ operating on that port. However, you can also use this to figure out what proces
 necessary when you try to access a file and find that it is locked, by running "lsof [file path]".
 
 ### The Extras
-Finally, before we proceed onto bash scripting, we cover three last commands: awk, sed, and xargs. The first two are actually quite
-complicated onto itself, and I'll simply go over a tiny bit of them, and the last one is actually pretty simple.
+Finally, before we proceed onto bash scripting, we cover two useful commands: _awk_ and _xargs_. The former is actually quite
+complicated onto itself, and I'll simply go over a tiny slice of it, and the last one is actually pretty simple. Let us start with awk.
 
+#### awk
+_awk_ in and of itself is a language, complete with variables, loops, conditionals, etc. However, it is not necessary to know the entirety of _awk_
+in order  to use it. Oftentimes, outputs in terminal are in a table form, such as ```ls -al``` or ```ps aux``` and oftentimes, you only need a few
+columns from the output and the others are superfluous and could even get in the way. So let us take the output of of ```ls -al``` and let us say
+you only care about who each file belongs to. You can pipe the output of ```ls -al``` to  _awk_ and have it just print out the 2nd and last column.
+Columns in awk are numbered starting from 1 (-_-) and columns can be accessed by $[column number]. _print_ is the command for outputting to standard
+out. Therefore, the full command would be ```ls -al | awk '{ print $3 "\t" $9 }'```. You can also incorporate regex into awk, to filter out the results.
+Let us say you only care about the hidden files, i.e. those starting with a period, then you would do ```ls -al | awk '$9 ~ /^\./'```. If you only wanted
+the user, filename, and size of the files that begin with "a", then it would be ```ls -al | awk '{ if ($9 ~ /^a/) { print $3 "\t" $5 "\t" $9 } }'```.
+This also happens to introduce one of the conditionals of _awk_.
+
+#### xargs
+_xargs_ is used to pass deliminated results as individual parameters. For example, let us say that you have the files test1, test2, test3, test4, test5 and
+you wish to delete all of them. Instead of typing out the filenames of those five, it would be more efficient to do ```ls | grep test | xargs rm```. Here,
+the results of _ls_ is piped to _grep_, which finds only those that start with test, and then passes the output to _xargs_, which uses each of those files
+as an individual argument that is passed to _rm_.
 ### Do Bashery
 The last thing that will be covered is bash scripting. While the commands are a big part of using bash, scripting is where the
 real action is. One argument is that the commands that exist in bash have been optimized many times over and it is oftentimes
