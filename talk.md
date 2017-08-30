@@ -253,7 +253,7 @@ The last thing that will be covered is bash scripting. While the commands are a 
 real action is. One argument is that the commands that exist in bash have been optimized many times over and it is oftentimes
 better to use an off-the-shelf component that has been proven to be written as efficiently as possible rather than rolling your
 own (would you rather cut your own wood and treat it or just buy a shelf from IKEA and assemble it yourself?). Therefore, the
-last part will consider declaring variables, branching, and looping in bash script. To demonstrate this, we shall be doing three
+last part will consider processing arguments, declaring variables, branching, and looping in bash script. To demonstrate this, we shall be doing three
 things:
  1. Search and replacing a string in a large number of files
  2. Output the files which contain a certain phrase
