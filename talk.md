@@ -236,4 +236,25 @@ you can install htop (please refer to instructions for your specific platform), 
 readable.
 
 lsof -
-This lists files and the processes that own them as well as any ports and IPs that the file is listening on. 
+This lists files and the processes that own them as well as any ports and IPs that the file is listening on. While it is called
+"list open files", literally everything in a Linux machine is a file (even network connections because they are given a number
+called a "file descriptor"). Therefore, lsof can be used to diagnose networking issues. This can be used to see what process
+is connecting on what port, and is especially useful for when you are trying to use a web framework and finds that the port that
+you are trying to connect to is already in use. To do this, executing "lsof -i -P -n | grep [port]" will yield the process currently
+operating on that port. However, you can also use this to figure out what process is currently using what file, which might become
+necessary when you try to access a file and find that it is locked, by running "lsof [file path]".
+
+### The Extras
+Finally, before we proceed onto bash scripting, we cover three last commands: awk, sed, and xargs. The first two are actually quite
+complicated onto itself, and I'll simply go over a tiny bit of them, and the last one is actually pretty simple.
+
+### Do Bashery
+The last thing that will be covered is bash scripting. While the commands are a big part of using bash, scripting is where the
+real action is. One argument is that the commands that exist in bash have been optimized many times over and it is oftentimes
+better to use an off-the-shelf component that has been proven to be written as efficiently as possible rather than rolling your
+own (would you rather cut your own wood and treat it or just buy a shelf from IKEA and assemble it yourself?). Therefore, the
+last part will consider declaring variables, branching, and looping in bash script. To demonstrate this, we shall be doing three
+things:
+ 1. Search and replacing a string in a large number of files
+ 2. Output the files which contain a certain phrase
+ 3. Count the number of occurrences of each word in a series of files
