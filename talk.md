@@ -288,12 +288,19 @@ Please refer to _count.sh_
 
 ## Suggested Packages
 git - Interfaces with git. Pretty much essential.
+
 tmux - **T**erminal **MU**tiple**X**er, able to start multiple terminal sessions in a single terminal session and can help massively improve workflow.
+
 htop - Better version of top. Allows sorting, scrolling, and filtering. You can also send signals to processes directly from htop.
+
 ncdu - Useful for deleting files and directories that are taking up too much space on the hard drive.
+
 zsh with oh-my-zsh - There are a number of benefits of zsh over bash, but I use it so I can easily customize the colors on the terminal to make it nice and pretty.
+
 vim - **VI** i**M**proved. vi with more stuff pretty much.
+
 wget and curl - Useful for pulling data from urls or for testing out API endpoints
+
 clang - Some say it is better than gcc (though don't use it for your assignments, just if you are working on your own C project, you insane person)
 
 Consult your local package manager for instructions.
