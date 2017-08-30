@@ -179,7 +179,7 @@ Starting from left to right:
 One of the most common formats that you will encounter are compressed and archive files. The most common of these files are zip (.zip),
 bzip2 (.bz or .bz2), gzip (.gz), and tarball (.tar). The last one is a bit different from the other ones but that distinction can be saved for
 you to figure out with Google.
-#### Compressing to zip and making tarballs
+#### Compressing to zip and making tarballs (as well as extracting them)
 To make a zip file, you simply do "zip [zip file name].zip [files or directories]" and it will compress the files to into a zip. If you have directories, use the
 "-r" option. To unzip, you would execute "unzip [zipfile]" and it will unzip it to the current directory. To unzip to another directory, set a destination
 with "-d", e.g. "unzip [zipfile] -d [dst]"
@@ -205,6 +205,7 @@ the output of the command on the left of the pipe character as the input of the 
 introduction to the _grep_ command, which can be used to find a pattern in an output piped to it. For example, you can do "ls | grep text" to find a file
 or directory called text in the output of the ls command. This is the same as "find text".
 
+## A Bit Harder Now
 ### Ports, Processes, Oh My!
 Now we are done with the boring stuff, we can get into some more "interesting" stuff (though, "interesting" is a relative term). Everything
 that runs in a computer, whether it be the code that draws things to terminal or the thing that makes the webcam turn on, is a "process".
@@ -284,3 +285,21 @@ Please refer to _finder.sh_
 
 #### Assignment 3: Word Count
 Please refer to _count.sh_
+
+## Suggested Packages
+git - Interfaces with git. Pretty much essential.
+tmux - **T**erminal **MU**tiple**X**er, able to start multiple terminal sessions in a single terminal session and can help massively improve workflow.
+htop - Better version of top. Allows sorting, scrolling, and filtering. You can also send signals to processes directly from htop.
+ncdu - Useful for deleting files and directories that are taking up too much space on the hard drive.
+zsh with oh-my-zsh - There are a number of benefits of zsh over bash, but I use it so I can easily customize the colors on the terminal to make it nice and pretty.
+vim - **VI** i**M**proved. vi with more stuff pretty much.
+wget and curl - Useful for pulling data from urls or for testing out API endpoints
+clang - Some say it is better than gcc (though don't use it for your assignments, just if you are working on your own C project, you insane person)
+
+Consult your local package manager for instructions.
+
+## Final Notes
+There is a lot more that bash has to offer. I simply have presented some of the commands that you would use by for yourself (I haven't even covered vim!).
+Managing entire networks, checking to see if a server is up or down, mounting drives, as well as a whole other suite of stuff. You do not have to learn
+everything about bash, I had to look up some of these things because I have not had a need to use it yet, so learn however much you need to get
+by comfortably and you should be alright. Thanks for reading! And please alert me of any inaccuracies (of which I anticipate there might be a few).
