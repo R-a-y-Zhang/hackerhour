@@ -66,10 +66,10 @@ are some of the most common commands used to interface with the file system.
         + -l : List files in list form (columns) instead of simplified form (rows)
     + path : path of the directory
     + Sample commands:
-        ls : list all files with just their names, except hidden ones
-        ls -a : list all files with just their names, including hidden ones
-        ls -al : list all files and the details about those files in list format
-        ls ./dir : list all files, except hidden files, in the "dir" subdirectory
+        + ```ls``` : list all files with just their names, except hidden ones
+        + ```ls -a``` : list all files with just their names, including hidden ones
+        + ```ls -al``` : list all files and the details about those files in list format
+        + ```ls ./dir``` : list all files, except hidden files, in the "dir" subdirectory
 
 + mkdir (-p) [new-directory-path]+ : makes a new directory or directories
     + -p : if given a path, such as dir1/dir2/dir3, it creates all directories down to
