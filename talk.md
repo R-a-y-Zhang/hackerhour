@@ -268,25 +268,53 @@ you wish to delete all of them. Instead of typing out the filenames of those fiv
 the results of _ls_ is piped to _grep_, which finds only those that start with test, and then passes the output to _xargs_, which uses each of those files
 as an individual argument that is passed to _rm_.
 
-### Do Bashery
-The last thing that will be covered is bash scripting. While the commands are a big part of using bash, scripting is where the
-real action is. One argument is that the commands that exist in bash have been optimized many times over and it is oftentimes
-better to use an off-the-shelf component that has been proven to be written as efficiently as possible rather than rolling your
-own (would you rather cut your own wood and treat it or just buy a shelf from IKEA and assemble it yourself?). Therefore, the
-last part will consider processing arguments, declaring variables, branching, and looping in bash script. To demonstrate this, we shall be doing three
-things:
- 1. Search and replacing a string in a large number of files
- 2. Output the files which contain a certain phrase
- 3. Count the number of occurrences of each word in a series of files
+#### ssh, scp, and rsync
+Not really "extra" but more of "you need this for class". **ssh**, or Secure Shell, is used to securely log in to a remote machine (ilab or otherwise)
+and be able to do work on said machine. This is necessary for various things, not just for verifying that your code runs on an ilab. The basic
+syntax is: ssh <username>@<machine-name>. Then, it will likely prompt you for login information, after which you'll be granted access to the
+remote machine.
 
-#### Assignment 1: Refactoring...
-Please refer to _refactor.sh_
+**scp**, or Secure Copy, is used to transfer files to and from local and remote machines using the ssh protocol. It is pretty simple. It will take
+a src as its first parameter and a destination as its second. An argument of _-r_ is necessary for transferring folders.
+Syntax: `scp (-r) [src] [dst]`. Remote machines paths is specified by the following combination: <username>@<machine-name>:<absolute-path>.
+rsync is a tool similar to, but meant to be superior to scp, since it uses delta-encoding and various methods to reduce network usage. The
+syntax is the same for rsync and scp.
 
-#### Assignment 2: Find in Files...
-Please refer to _finder.sh_
+### Editors
+There are a variety of tools for editing files built-in to terminal. Among those are ed, nano, pico, and vi. The other three are pretty easy to use,
+you navigate with your arrow keys and at the bottom it will tell you the shortcuts to various commands. vi, on the other hand, does not do this.
+I will briefly go over vi, and what to do. If you use vim, it is built to be a better version of vi (Vi Improved). There are three primary modes:
+Normal, Visual, and Insert. Normal mode is used for navigation and text manipulation, Visual mode is used for manipulation of selected text,
+and Insert mode is used for adding new text. Navigation is primarily done on the h (go left), j (go down), k (go up), and l (go right). You can go
+from Normal --> Visual, Normal --> Insert, Insert --> Normal, and Visual --> Normal. To enter Visual mode, you press `v` while in Normal mode. To
+enter Insert from Normal, you press `i`, and in any mode, you can return to Normal by using either `esc` or `Ctrl`+`[`. In normal mode, there are a
+few useful navigation shortcuts. To move among the text hjkl can be used. Else, refer to the following.
+- `:w` : Write buffer to file
+- `:q` : Quit vim
+- `:wq` : Write buffer and quit
+- `:q!` : Force quit
+- `Shift`+`g` : To end of file
+- `gg : To start of file
+- [number] + `Shift` + `g` : To to line [number]
+- `dd` : cuts current line
+- `p` : cuts current line
+- `0` : Go to start of current line
+- `$` : Go to end of current line
+- `e` : Go to end of next word in current line
+- `w` : Go to start of next word in current line
+- `b` : Go to start of previous word in current line
+- `/` + <word> : Search for all instances of <word> in current file
+- `:s/<old-pattern>/<new-pattern>` : Finds and replaces first instance of old-pattern with new pattern
+- `:s/<old-pattern>/<new-pattern>/g` : Replaces all on current line
+- `:%s/<old-pattern>/<new-pattern>/g` : Replace all occurrances in file
+- `:noh` : Remove highlighting
+- `u` : Undo
+- `Ctrl` + `r` : Redo
 
-#### Assignment 3: Word Count
-Please refer to _count.sh_
+In visual mode, there are a few basic operations you can perform:
+- Highlight: Enter visual mode at one end of the text you wish to select and navigate to the other end of what you wish to select
+- Copy: After highlighting, press `y` (Yank)
+- Cut: After highlighting, press 'd'
 
 ## Suggested Packages
 - **git** - Interfaces with git. Pretty much essential.
@@ -299,7 +327,7 @@ Please refer to _count.sh_
 
 - **zsh with oh-my-zsh** - There are a number of benefits of zsh over bash, but I use it so I can easily customize the colors on the terminal to make it nice and pretty.
 
-- **vim** - **VI** i**M**proved. vi with more stuff pretty much.
+- **vim** - **VI** i**M**proved. vi with more features, such as split screen, and finer control of configuration.
 
 - **wget and curl** - Useful for pulling data from urls or for testing out API endpoints
 
