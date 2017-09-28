@@ -1,0 +1,45 @@
+Hello, I am Rui Zhang, I am a junior and I study Computer Science. Today, I have been asked to
+give all of you a brief overview of terminal and how to use it so that you guys can be equipped
+your classes and your careers going forward. Now, be warned, this will be going over pretty
+beginner-level bash, so if you already know quite a bit well, you are free to stay. I will be
+going over basic file operations, including navigation and permissions, going on to talk about
+how you can manage your processes, file compression and decompression, and ending with an
+overview of editors within the environment that you can use. If you have any questions, feel
+free to ask me at anytime, I cannot guarantee I will know the answer to it but I will try my best.
+
+Now, what is terminal? Terminal, or the terminal emulator, is an application bundled into the
+that allows you to communicate more granularly with the operating system and its various operations.
+Inside, there is a shell, such as bash, zshell, bourne shell, c shell, etc. Our primary focus will
+be bash. Through the terminal, we are able to do various things, such as exploring the file system,
+changing permissions, edit files, and see what processes are currently running and what resources
+they are using without needing to open up three to four different applications to do it. It is
+usually the more efficient way to do things.
+
+We shall start off with the file system, how to navigate it, and how to manipulate it.
+
+Every single file on your machine has a path that tells the system where the file is located at.
+There are two types of paths: absolute and relative. Absolute path is the path to that file from
+the root of the machine and oftentimes will start with a backslash. The relative path is the
+path to that file from your current directory and that will not begin with a backslash. In addition,
+there are also two unique directory names, the single and double period. The former is a reference
+to your current directory, and the latter is a reference to the parent of your current directory.
+Let us move on to some commands.
+
+Let us start out with the basics.
+
+One of the most important things to know when you are working in the terminal, is knowing exactly
+where you are in the filesystem. If you do not know where you are, then it will become difficult
+getting to other files and doing many of the things that you would normally do in a terminal. If
+you ever get lost, you can type pwd, and it will show you the current working directory that you are
+in. Now that you know what directory you are in, you now want to know what files and directories
+are in your current directory. You would use the command ls to do that, which will give you a list
+of the files that is in the current directory. Let us say you wanted more information, like
+who the file belongs to, its permissions, when it was modified or created, etc. You would execute
+L-S dash L, which will show you all that information. Now, any directory or file whose name
+starts with a dot means that it is hidden, which simply means that it is usually kept out of site.
+Examples of this include configuration directories and files, as well as .gitignore and .git. If you
+want those too, simply add the dash A option, and it will show information about hidden files as
+well. If you want directory information about another directory, like you are five levels into a
+directory and you do not want to leave, you can add on to the end of L-S the path of the directory
+you want to see. Now that you know what is in a directory, what can you do? Well, you can quite
+a few things, actually. 
