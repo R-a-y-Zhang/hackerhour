@@ -8,7 +8,7 @@ out of you mind. Let's begin!
 ## Basics
 ### Why
 As a programmer, there are a few tools which you are required to be
-comfortable with whether or not you want to or not. One of these things is the
+comfortable. One of these things is the
 terminal, the tool which our forefathers wielded before we had cute little icons
 and nice colors to look at. A time when speeds were measured in KHz instead of
 GHz. A time when pong was considered fun. Some might find it intimidating,
