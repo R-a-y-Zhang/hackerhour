@@ -64,6 +64,7 @@ are some of the most common commands used to interface with the file system.
     + options
         + -a : List all files
         + -l : List files in list form (columns) instead of simplified form (rows)
+        + -h : Gives the listings in human-readable format
     + path : path of the directory
     + Sample commands:
         + ```ls``` : list all files with just their names, except hidden ones
@@ -95,12 +96,12 @@ are some of the most common commands used to interface with the file system.
 
 **mv [srcs]+ [dst]** : moves files or directories specified in srcs to dst directory
 
-**find [patterns]+** : finds files whose path matches patterns
+**find [dirname] (-type [type]) -name [name]** : finds files whose path matches patterns
     + Sample commands:
         + ```find text.txt``` : find files in current directory whose name matches text.txt
         + ```find t*``` : find files whose first letter is t
-        + ```find dir1/text.txt``` : find files in dir1 subdirectory whose name matches text.txt
-        + ```find t* s*``` : find files whose first letter is t or s
+        + ```find dir1 -type f -name test.txt``` : find files in dir1 subdirectory whose name matches text.txt
+        + ```find dir1 -name item``` : find all items in dir1 that matches item
 
 **echo (string) (>|>>) (file)** : print contents in string to standard output or writes it to a file
     + ">" : replaces contents in _file_ with _string_
@@ -124,9 +125,9 @@ precipitation on the tip of the iceberg. If you type ```ls -al```, you are prese
 that you might not be able to make sense of. It should look something like this:
 ```
 total 16
-drwxr-xr-x  2 horimori horimori 4096 Aug 28 23:37 .
-drwxr-xr-x 14 horimori horimori 4096 Aug 28 20:29 ..
--rw-r--r--  1 horimori horimori 6595 Aug 28 23:37 talk.md
+drwxr-xr-x  2 username username 4096 Aug 28 23:37 .
+drwxr-xr-x 14 username username 4096 Aug 28 20:29 ..
+-rw-r--r--  1 username username 6595 Aug 28 23:37 talk.md
 .
 .
 .
@@ -154,7 +155,7 @@ Starting from left to right:
             + ```chmod +x file``` : Allow user, group, and global to execute the file
             + ```chmod u+x file``` : Add execute permission for user to file
             + ```chmod g-x file``` : Remove execution permission from group for file
-            + ```chmod w-w file``` : Remove write permissions for global for file
+            + ```chmod o-w file``` : Remove write permissions for global for file
             + ```chmod ug+r file``` : Add read permission for user and group for file
         2. You can also use numerical codes to edit the permissions for the file. To change permissions using numeric codes, the numeric code must be
             exactly 3 numbers long (e.g. 123) and the numbers are determined by the binary representations of the permissions, i.e. if a permission
@@ -261,6 +262,10 @@ out. Therefore, the full command would be ```ls -al | awk '{ print $3 "\t" $9 }'
 Let us say you only care about the hidden files, i.e. those starting with a period, then you would do ```ls -al | awk '$9 ~ /^\./'```. If you only wanted
 the user, filename, and size of the files that begin with "a", then it would be ```ls -al | awk '{ if ($9 ~ /^a/) { print $3 "\t" $5 "\t" $9 } }'```.
 This also happens to introduce one of the conditionals of _awk_.
+
+#### sed
+**sed**, or Stream EDitor, is another pretty powerful tool. It can be used for file manipulation, find and replace, searching, deleting, etc.
+It's usage is left as an exercise to the reader.
 
 #### xargs
 **xargs** is used to pass deliminated results as individual parameters. For example, let us say that you have the files test1, test2, test3, test4, test5 and

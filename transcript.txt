@@ -21,4 +21,32 @@ relative paths are? (yes, no)
 IF no THEN EXPLAIN paths
 ELSE CONTINUE
 Now, anything that you can do in whatever file explorer you can do in the terminal, oftentimes better
-and more efficiently.
+and more efficiently. For example, if you want a quick glance into what is in a directory, you can simply
+navigate to that directory, using the command cd, and execute ls. If you want to see hidden objects,
+which are files and directories beginning with a period, you can execute ls -a. If you need more information,
+you can add -l and it will list details such as ownership and permissions. Now, if you are in one
+directory and you want to go to another, you just need to pass in a path to ls and it will
+list out the contents of that directory. But usually, if you are poking around in the filesystem, you
+want to do more than to just admire your files, you usually want to do something.
+
+If you want to create a directory, you can use mkdir, which means make directory, and you can pass in
+a name or names, and it will create those directories. If you want to create directories in directories,
+such as foo/bar, you can supply the argument -p and then the path and it will create all directories within
+that path. You can also create files too! touch and filename. But what's so great about creating if you
+can't also destroy? rm is the tool used to remove files, and you can pass in a list of files and directories
+that you wish to delete. However, if you need to delete directories you need to pass in the -r argument
+to tell it to delete them recursively. And you can use -f to force delete files. Finally, you can also
+cut/copy and paste folders and files too. To copy, it is cp, then your things you want to move and the last
+argument is the destination. If you want to move directories, you will have to add -r. For move, it is
+a similar format but you do not need to add -r for directories. But let's say you are looking for a file
+that you stored ages ago. It's filed away somewhere in some dusty old corner of your filesystem, never
+seeing the light of day, and slowly rotting away. And one day you figured that the file must be brought
+forth again! What do you do? You could cd in and out of every directory but that will be ridiculous. So,
+terminal has, obviously, a convenient tool for finding files called find.
+
+Finally, some small tools that you will need.
+
+Echo, less, head, tail, cat
+
+Now, let's move on from the file system to files.
+Every file 
