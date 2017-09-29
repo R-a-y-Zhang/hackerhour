@@ -341,7 +341,7 @@ In visual mode, there are a few basic operations you can perform:
 Consult your local package manager for instructions.
 
 ## Final Notes
-There is a lot more that bash has to offer. I simply have presented some of the commands that you would use by for yourself (I haven't even covered vim!).
+There is a lot more that bash has to offer. I simply have presented some of the commands that you would use by for yourself.
 Managing entire networks, checking to see if a server is up or down, mounting drives, as well as a whole other suite of stuff. You do not have to learn
 everything about bash, I had to look up some of these things because I have not had a need to use it yet, so learn however much you need to get
 by comfortably and you should be alright. Thanks for reading! And please alert me of any inaccuracies (of which I anticipate there might be a few).
