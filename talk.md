@@ -248,10 +248,6 @@ you are trying to connect to is already in use. To do this, executing ```lsof -i
 operating on that port. However, you can also use this to figure out what process is currently using what file, which might become
 necessary when you try to access a file and find that it is locked, by running ```lsof [file path]```.
 
-### The Extras
-Finally, before we proceed onto bash scripting, we cover two useful commands: _awk_ and _xargs_. The former is actually quite
-complicated onto itself, and I'll simply go over a tiny slice of it, and the last one is actually pretty simple. Let us start with awk.
-
 #### awk
 **awk** in and of itself is a language, complete with variables, loops, conditionals, etc. However, it is not necessary to know the entirety of _awk_
 in order  to use it. Oftentimes, outputs in terminal are in a table form, such as ```ls -al``` or ```ps aux``` and oftentimes, you only need a few
