@@ -295,7 +295,7 @@ few useful navigation shortcuts. To move among the text hjkl can be used. Else, 
 - `:wq` : Write buffer and quit
 - `:q!` : Force quit
 - `Shift`+`g` : To end of file
-- `gg : To start of file
+- `gg` : To start of file
 - [number] + `Shift` + `g` : To to line [number]
 - `dd` : cuts current line
 - `p` : cuts current line
