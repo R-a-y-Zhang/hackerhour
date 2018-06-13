@@ -29,7 +29,7 @@ should install to make your life much easier. Now, let us get started.
 ### Syntax for this guide
 - Text not surrounded with anything denote that the text must be there
 - Text surrounded by brackets indicate parameters that must be supplied
-- Text surrounded by angle brackets indicate parameters that are optional
+- Text surrounded by parentheses indicate parameters that are optional
 - Text surrounded by brackets or angle brackets that are appended with an "\*" means
     there can be zero or more arguments. Those with a "+" means that there must
     be at least one of such argument.
